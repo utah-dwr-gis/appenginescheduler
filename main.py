@@ -25,7 +25,7 @@ def start_natureCentroidCitation():
 
     try:
         natureCentroidCitation.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -34,7 +34,7 @@ def start_natureCentroidCitation():
 def start_natureCentroidCitationSF():
     try:
         natureCentroidCitationSF.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -43,7 +43,7 @@ def start_natureCentroidCitationSF():
 def start_natureCentroidEO(): 
     try:
         natureCentroidEO.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -52,7 +52,7 @@ def start_natureCentroidEO():
 def start_natureCentroid(): 
     try:
         natureCentroid.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
