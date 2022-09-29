@@ -1,0 +1,21 @@
+cron:
+- description: natureCentroidCitation
+  url: /natureCentroidCitation
+  schedule: every friday 23:00
+  timezone: America/Boise
+  target: default
+- description: natureCentroidCitationSF
+  url: /natureCentroidCitationSF
+  schedule: every saturday 23:00
+  timezone: America/Boise
+  target: default
+- description: natureCentroidEO
+  url: /natureCentroidEO
+  schedule: every sunday 23:00
+  timezone: America/Boise
+  target: default
+- description: natureCentroid
+  url: /natureCentroid
+  schedule: every monday 03:00
+  timezone: America/Boise
+  target: default

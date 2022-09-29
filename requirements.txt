@@ -1,0 +1,8 @@
+google-api-python-client
+Flask
+oracledb
+google-cloud-bigquery
+pandas
+fiona
+pygeos
+db-dtypes
