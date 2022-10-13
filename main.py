@@ -64,7 +64,7 @@ def start_natureCentroid():
 def start_naturePoint(): 
     try:
         naturePoint.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -73,7 +73,7 @@ def start_naturePoint():
 def start_naturePoly(): 
     try:
         naturePoly.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -82,7 +82,7 @@ def start_naturePoly():
 def start_natureLine():
     try:
         natureLine.run() 
-        return "Pipeline started", 200
+        return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
