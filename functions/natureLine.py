@@ -17,7 +17,12 @@ def run():
     # )
     curs = conn.cursor()
     sql = '''
-SELECT * FROM SOURCE_FEATURE_PRE_LINE
+SELECT source_feature_id, 
+sdo_lrs.convert_to_std_geom(sdo_lrs.locate_pt(sdo_lrs.convert_to_lrs_geom(shape,3)
+    ,sdo_geom.sdo_length(shape,3)/2)).sdo_point.x as midpoint_x,
+sdo_lrs.convert_to_std_geom(sdo_lrs.locate_pt(sdo_lrs.convert_to_lrs_geom(shape,3)
+    ,sdo_geom.sdo_length(shape,3)/2)).sdo_point.y as midpoint_y
+FROM SOURCE_FEATURE_PRE_Line
 '''
     curs.execute(sql)
     columns = [col[0] for col in curs.description]
