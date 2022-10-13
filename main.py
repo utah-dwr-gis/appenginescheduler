@@ -8,6 +8,9 @@ import function.natureCentroidCitation as natureCentroidCitation #the subfolder 
 import function.natureCentroidCitationSF as natureCentroidCitationSF 
 import function.natureCentroidEO as natureCentroidEO 
 import function.natureCentroid as natureCentroid
+import function.naturePoint as naturePoint
+import function.naturePoly as naturePoly
+import function.natureLine as natureLine
 import os
 
 app = flask.Flask(__name__)
@@ -53,6 +56,33 @@ def start_natureCentroid():
     try:
         natureCentroid.run() 
         return "Data copied to bigquery successfully", 200
+    except Exception as e:
+        logging.exception(e)
+        return "Error: <pre>{}</pre>".format(e), 500
+
+@app.route('/naturePoint')
+def start_naturePoint(): 
+    try:
+        naturePoint.run() 
+        return "Pipeline started", 200
+    except Exception as e:
+        logging.exception(e)
+        return "Error: <pre>{}</pre>".format(e), 500
+
+@app.route('/naturePoly')
+def start_naturePoly(): 
+    try:
+        naturePoly.run() 
+        return "Pipeline started", 200
+    except Exception as e:
+        logging.exception(e)
+        return "Error: <pre>{}</pre>".format(e), 500
+
+@app.route('/natureLine')
+def start_natureLine():
+    try:
+        natureLine.run() 
+        return "Pipeline started", 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
