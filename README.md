@@ -5,6 +5,7 @@ This app engine application is designed to retrieve data from an oracle database
 For you to run this script you will need to create an "env.py" script in the functions folder. This script will contain your oracle (or other) connection file in the following format:
 
 ```
+import oracledb
 conn = oracledb.connect(
             user='username in quotes',
             password='password in quotes',
