@@ -7,6 +7,7 @@ from google.cloud import bigquery
 import function.natureCentroidCitation as natureCentroidCitation #the subfolder structure for calling the script
 import function.natureCentroidCitationSF as natureCentroidCitationSF 
 import function.natureCentroidEO as natureCentroidEO 
+import function.natureCentroidEOcross as natureCentroidEOcross 
 import function.natureCentroid as natureCentroid
 import function.naturePoint as naturePoint
 import function.naturePoly as naturePoly
@@ -46,6 +47,15 @@ def start_natureCentroidCitationSF():
 def start_natureCentroidEO(): 
     try:
         natureCentroidEO.run() 
+        return "Data copied to bigquery successfully", 200
+    except Exception as e:
+        logging.exception(e)
+        return "Error: <pre>{}</pre>".format(e), 500
+
+@app.route('/natureCentroidEOcross') 
+def start_natureCentroidEOcross(): 
+    try:
+        natureCentroidEOcross.run() 
         return "Data copied to bigquery successfully", 200
     except Exception as e:
         logging.exception(e)

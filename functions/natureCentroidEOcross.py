@@ -17,10 +17,9 @@ def run():
     # )
     curs = conn.cursor()
     sql = '''
-SELECT source_feature_id,
-SDO_GEOM.SDO_CENTROID(shape,0.005).sdo_point.x as x,
-SDO_GEOM.SDO_CENTROID(shape,0.005).sdo_point.y as y
-FROM SOURCE_FEATURE_PRE_POLY
+SELECT SOURCE_FEATURE_ID,
+EO_ID
+FROM EO_SOURCE_FEATURE
 '''
     curs.execute(sql)
     columns = [col[0] for col in curs.description]
@@ -31,7 +30,7 @@ FROM SOURCE_FEATURE_PRE_POLY
     client = bigquery.Client(project=PROJECT_ID, location="US")
     # set location 
     dataset_id = 'biobase'
-    table_id = 'naturePoly'
+    table_id = 'natureCentroidEOcross'
     # set config
     dataset_ref = client.dataset(dataset_id)
     table_ref = dataset_ref.table(table_id)
