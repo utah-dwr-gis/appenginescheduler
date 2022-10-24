@@ -28,8 +28,8 @@ def start_natureCentroidCitation():
     #     return 'Bad Request', 400
 
     try:
-        natureCentroidCitation.run() 
-        return "Data copied to bigquery successfully", 200
+        ncc = natureCentroidCitation.run() 
+        return ncc, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -37,8 +37,8 @@ def start_natureCentroidCitation():
 @app.route('/natureCentroidCitationSF') 
 def start_natureCentroidCitationSF():
     try:
-        natureCentroidCitationSF.run() 
-        return "Data copied to bigquery successfully", 200
+        nccsf = natureCentroidCitationSF.run() 
+        return nccsf, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -46,8 +46,8 @@ def start_natureCentroidCitationSF():
 @app.route('/natureCentroidEO') 
 def start_natureCentroidEO(): 
     try:
-        natureCentroidEO.run() 
-        return "Data copied to bigquery successfully", 200
+        nceo = natureCentroidEO.run() 
+        return nceo, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -55,8 +55,8 @@ def start_natureCentroidEO():
 @app.route('/natureCentroidEOcross') 
 def start_natureCentroidEOcross(): 
     try:
-        natureCentroidEOcross.run() 
-        return "Data copied to bigquery successfully", 200
+        nceoc = natureCentroidEOcross.run() 
+        return nceoc, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -64,8 +64,8 @@ def start_natureCentroidEOcross():
 @app.route('/natureCentroid')
 def start_natureCentroid(): 
     try:
-        natureCentroid.run() 
-        return "Data copied to bigquery successfully", 200
+        nc = natureCentroid.run() 
+        return nc, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -73,8 +73,8 @@ def start_natureCentroid():
 @app.route('/naturePoint')
 def start_naturePoint(): 
     try:
-        naturePoint.run() 
-        return "Data copied to bigquery successfully", 200
+        npt = naturePoint.run() 
+        return npt, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -82,8 +82,8 @@ def start_naturePoint():
 @app.route('/naturePoly')
 def start_naturePoly(): 
     try:
-        naturePoly.run() 
-        return "Data copied to bigquery successfully", 200
+        npy = naturePoly.run() 
+        return npy, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500
@@ -91,8 +91,8 @@ def start_naturePoly():
 @app.route('/natureLine')
 def start_natureLine():
     try:
-        natureLine.run() 
-        return "Data copied to bigquery successfully", 200
+        nl = natureLine.run() 
+        return nl, 200
     except Exception as e:
         logging.exception(e)
         return "Error: <pre>{}</pre>".format(e), 500

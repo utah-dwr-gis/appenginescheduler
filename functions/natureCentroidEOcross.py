@@ -41,8 +41,8 @@ FROM EO_SOURCE_FEATURE
           gcp, table_ref, job_config=job_config
     ) 
     job.result()  # Wait for the job to complete.
-    # result = "Loaded {} rows into {}:{}.".format(job.output_rows, dataset_id, table_id)
       
     curs.close()
     conn.close()
     
+    return "Loaded {} rows into {}:{}".format(job.output_rows, dataset_id, table_id)
